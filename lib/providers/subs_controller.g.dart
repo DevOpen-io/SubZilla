@@ -10,7 +10,7 @@ part of 'subs_controller.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(subsStorage)
-const subsStorageProvider = SubsStorageProvider._();
+final subsStorageProvider = SubsStorageProvider._();
 
 final class SubsStorageProvider
     extends
@@ -22,7 +22,7 @@ final class SubsStorageProvider
     with
         $FutureModifier<JsonSqFliteStorage>,
         $FutureProvider<JsonSqFliteStorage> {
-  const SubsStorageProvider._()
+  SubsStorageProvider._()
     : super(
         from: null,
         argument: null,
@@ -52,12 +52,12 @@ String _$subsStorageHash() => r'2e3ce2bce27a4b50ba13ce6a41863ac5131f4985';
 
 @ProviderFor(SubsController)
 @JsonPersist()
-const subsControllerProvider = SubsControllerProvider._();
+final subsControllerProvider = SubsControllerProvider._();
 
 @JsonPersist()
 final class SubsControllerProvider
     extends $AsyncNotifierProvider<SubsController, List<SubSlice>> {
-  const SubsControllerProvider._()
+  SubsControllerProvider._()
     : super(
         from: null,
         argument: null,
@@ -84,7 +84,6 @@ abstract class _$SubsControllerBase extends $AsyncNotifier<List<SubSlice>> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<AsyncValue<List<SubSlice>>, List<SubSlice>>;
     final element =
         ref.element
@@ -94,7 +93,7 @@ abstract class _$SubsControllerBase extends $AsyncNotifier<List<SubSlice>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }
 

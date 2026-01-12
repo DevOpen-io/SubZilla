@@ -10,7 +10,7 @@ part of 'brands_provider.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(brandsStorage)
-const brandsStorageProvider = BrandsStorageProvider._();
+final brandsStorageProvider = BrandsStorageProvider._();
 
 final class BrandsStorageProvider
     extends
@@ -22,7 +22,7 @@ final class BrandsStorageProvider
     with
         $FutureModifier<JsonSqFliteStorage>,
         $FutureProvider<JsonSqFliteStorage> {
-  const BrandsStorageProvider._()
+  BrandsStorageProvider._()
     : super(
         from: null,
         argument: null,
@@ -52,11 +52,11 @@ String _$brandsStorageHash() => r'50746d0570d0e548601bf78a377e429911d66e17';
 
 @ProviderFor(Brands)
 @JsonPersist()
-const brandsProvider = BrandsProvider._();
+final brandsProvider = BrandsProvider._();
 
 @JsonPersist()
 final class BrandsProvider extends $AsyncNotifierProvider<Brands, List<Brand>> {
-  const BrandsProvider._()
+  BrandsProvider._()
     : super(
         from: null,
         argument: null,
@@ -83,7 +83,6 @@ abstract class _$BrandsBase extends $AsyncNotifier<List<Brand>> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<AsyncValue<List<Brand>>, List<Brand>>;
     final element =
         ref.element
@@ -93,7 +92,7 @@ abstract class _$BrandsBase extends $AsyncNotifier<List<Brand>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }
 

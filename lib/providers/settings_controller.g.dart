@@ -10,7 +10,7 @@ part of 'settings_controller.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(settingsStorage)
-const settingsStorageProvider = SettingsStorageProvider._();
+final settingsStorageProvider = SettingsStorageProvider._();
 
 final class SettingsStorageProvider
     extends
@@ -22,7 +22,7 @@ final class SettingsStorageProvider
     with
         $FutureModifier<JsonSqFliteStorage>,
         $FutureProvider<JsonSqFliteStorage> {
-  const SettingsStorageProvider._()
+  SettingsStorageProvider._()
     : super(
         from: null,
         argument: null,
@@ -52,12 +52,12 @@ String _$settingsStorageHash() => r'cbb6fe2ab51d09c16684e0bc77b87d31b9442467';
 
 @ProviderFor(SettingsController)
 @JsonPersist()
-const settingsControllerProvider = SettingsControllerProvider._();
+final settingsControllerProvider = SettingsControllerProvider._();
 
 @JsonPersist()
 final class SettingsControllerProvider
     extends $AsyncNotifierProvider<SettingsController, SettingsViewModel> {
-  const SettingsControllerProvider._()
+  SettingsControllerProvider._()
     : super(
         from: null,
         argument: null,
@@ -86,7 +86,6 @@ abstract class _$SettingsControllerBase
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref =
         this.ref as $Ref<AsyncValue<SettingsViewModel>, SettingsViewModel>;
     final element =
@@ -97,7 +96,7 @@ abstract class _$SettingsControllerBase
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }
 
