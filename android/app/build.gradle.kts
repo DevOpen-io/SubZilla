@@ -8,8 +8,6 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-// Groovy'deki "def" yerine Kotlin'de "val" kullanılır.
-// Tek tırnak (') yerine çift tırnak (") kullanılır.
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("key.properties")
 if (keystorePropertiesFile.exists()) {
@@ -18,7 +16,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "io.devopen.subzilla"
-    compileSdk = 36 // Eğer hata alırsan bunu 34 veya 35 yapabilirsin.
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -34,7 +32,7 @@ android {
     defaultConfig {
         applicationId = "io.devopen.subzilla"
         minSdk = flutter.minSdkVersion
-        targetSdk = 33 // Genelde compileSdk ile uyumlu olması önerilir ama 33 de çalışır.
+        targetSdk = 33
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         multiDexEnabled = true
@@ -48,7 +46,7 @@ android {
                 keyPassword = keystoreProperties["keyPassword"] as String
                 storeFile = file(keystoreProperties["storeFile"] as String)
                 storePassword = keystoreProperties["storePassword"] as String
-            } else {
+            } else if (System.getenv("KEY_STORE_PASSWORD") != null) {
                 // CI/CD Ortamı (GitHub Actions)
                 storeFile = file("upload-keystore.jks")
                 storePassword = System.getenv("KEY_STORE_PASSWORD")
@@ -60,14 +58,13 @@ android {
 
     buildTypes {
         release {
-            // Kotlin DSL'de atama yapılırken "=" kullanılır ve getByName ile çağrılır.
-            signingConfig = signingConfigs.getByName("release")
+            if (keystorePropertiesFile.exists() || System.getenv("KEY_STORE_PASSWORD") != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             
-            // Kotlin DSL'de "isMinifyEnabled" property'si kullanılır.
             isMinifyEnabled = false
             isShrinkResources = false
             
-            // Fonksiyon çağrıları parantez içinde olmalıdır.
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
