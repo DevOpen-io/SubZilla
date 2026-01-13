@@ -38,6 +38,11 @@ android {
         multiDexEnabled = true
     }
 
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     signingConfigs {
         // Kotlin DSL'de yeni bir config oluştururken create("isim") kullanılır.
         create("release") {
@@ -62,9 +67,8 @@ android {
                 signingConfig = signingConfigs.getByName("release")
             }
             
-            isMinifyEnabled = false
-            isShrinkResources = false
-            
+            isMinifyEnabled = true 
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
