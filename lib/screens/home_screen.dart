@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,6 +6,7 @@ import 'package:subs_tracker/models/sub_slice.dart';
 import 'package:subs_tracker/providers/settings_controller.dart';
 import 'package:subs_tracker/providers/subs_controller.dart';
 import 'package:subs_tracker/widgets/add_subs_dialog.dart';
+import 'package:subs_tracker/widgets/brand_logo.dart';
 import 'package:subs_tracker/widgets/edit_subs_dialog.dart';
 
 class HomeScreen extends HookConsumerWidget {
@@ -327,27 +327,17 @@ class _CompactSliceLeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-        color: slice.brand?.logo != null
-            ? Colors.transparent
-            : Color(slice.color),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: slice.brand?.logo != null
-          ? ClipRRect(
+    return slice.brand != null
+        ? BrandLogo(brand: slice.brand, size: 40)
+        : Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Color(slice.color),
               borderRadius: BorderRadius.circular(6),
-              child: CachedNetworkImage(
-                imageUrl: slice.brand!.logo!,
-                fit: BoxFit.contain,
-                placeholder: (_, _) => const _SliceLogoPlaceholder(),
-                errorWidget: (_, _, _) => SubAvatar(s: slice),
-              ),
-            )
-          : SubAvatar(s: slice),
-    );
+            ),
+            child: SubAvatar(s: slice),
+          );
   }
 }
 
@@ -368,17 +358,4 @@ class SubAvatar extends StatelessWidget {
   }
 }
 
-class _SliceLogoPlaceholder extends StatelessWidget {
-  const _SliceLogoPlaceholder();
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: SizedBox(
-        width: 20,
-        height: 20,
-        child: CircularProgressIndicator(strokeWidth: 2),
-      ),
-    );
-  }
-}

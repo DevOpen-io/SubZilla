@@ -1,10 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:subs_tracker/models/sub_slice.dart';
 import 'package:subs_tracker/providers/subs_controller.dart';
+import 'package:subs_tracker/widgets/brand_logo.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarScreen extends HookConsumerWidget {
@@ -92,17 +92,10 @@ class CalendarScreen extends HookConsumerWidget {
                   itemBuilder: (context, index) {
                     final sub = selectedEvents[index];
                     return ListTile(
-                      leading: sub.brand?.logo != null
-                          ? CachedNetworkImage(
-                              imageUrl: sub.brand!.logo!,
-                              width: 32,
-                              height: 32,
-                              fit: BoxFit.contain,
-                              errorWidget: (_, _, _) => CircleAvatar(
-                                radius: 16,
-                                backgroundColor: Color(sub.color),
-                                child: Text(sub.name[0].toUpperCase()),
-                              ),
+                      leading: sub.brand != null
+                          ? BrandLogo(
+                              brand: sub.brand,
+                              size: 32,
                             )
                           : CircleAvatar(
                               radius: 16,

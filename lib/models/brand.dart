@@ -8,6 +8,7 @@ abstract class Brand with _$Brand {
   const factory Brand({
     required String text,
     String? logo,
+    String? icon,
     String? category,
     String? name,
     String? country,

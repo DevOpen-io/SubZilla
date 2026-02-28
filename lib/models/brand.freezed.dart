@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Brand {
 
- String get text; String? get logo; String? get category; String? get name; String? get country; String? get desc; bool? get isNative;
+ String get text; String? get logo; String? get icon; String? get category; String? get name; String? get country; String? get desc; bool? get isNative;
 /// Create a copy of Brand
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $BrandCopyWith<Brand> get copyWith => _$BrandCopyWithImpl<Brand>(this as Brand, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text,logo,category,name,country,desc,isNative);
+int get hashCode => Object.hash(runtimeType,text,logo,icon,category,name,country,desc,isNative);
 
 @override
 String toString() {
-  return 'Brand(text: $text, logo: $logo, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
+  return 'Brand(text: $text, logo: $logo, icon: $icon, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $BrandCopyWith<$Res>  {
   factory $BrandCopyWith(Brand value, $Res Function(Brand) _then) = _$BrandCopyWithImpl;
 @useResult
 $Res call({
- String text, String? logo, String? category, String? name, String? country, String? desc, bool? isNative
+ String text, String? logo, String? icon, String? category, String? name, String? country, String? desc, bool? isNative
 });
 
 
@@ -65,10 +65,11 @@ class _$BrandCopyWithImpl<$Res>
 
 /// Create a copy of Brand
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? logo = freezed,Object? category = freezed,Object? name = freezed,Object? country = freezed,Object? desc = freezed,Object? isNative = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? logo = freezed,Object? icon = freezed,Object? category = freezed,Object? name = freezed,Object? country = freezed,Object? desc = freezed,Object? isNative = freezed,}) {
   return _then(_self.copyWith(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,logo: freezed == logo ? _self.logo : logo // ignore: cast_nullable_to_non_nullable
+as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable
@@ -159,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text,  String? logo,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text,  String? logo,  String? icon,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Brand() when $default != null:
-return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
+return $default(_that.text,_that.logo,_that.icon,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
   return orElse();
 
 }
@@ -180,10 +181,10 @@ return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text,  String? logo,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text,  String? logo,  String? icon,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)  $default,) {final _that = this;
 switch (_that) {
 case _Brand():
-return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
+return $default(_that.text,_that.logo,_that.icon,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +201,10 @@ return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text,  String? logo,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text,  String? logo,  String? icon,  String? category,  String? name,  String? country,  String? desc,  bool? isNative)?  $default,) {final _that = this;
 switch (_that) {
 case _Brand() when $default != null:
-return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
+return $default(_that.text,_that.logo,_that.icon,_that.category,_that.name,_that.country,_that.desc,_that.isNative);case _:
   return null;
 
 }
@@ -215,11 +216,12 @@ return $default(_that.text,_that.logo,_that.category,_that.name,_that.country,_t
 @JsonSerializable()
 
 class _Brand implements Brand {
-  const _Brand({required this.text, this.logo, this.category, this.name, this.country, this.desc, this.isNative});
+  const _Brand({required this.text, this.logo, this.icon, this.category, this.name, this.country, this.desc, this.isNative});
   factory _Brand.fromJson(Map<String, dynamic> json) => _$BrandFromJson(json);
 
 @override final  String text;
 @override final  String? logo;
+@override final  String? icon;
 @override final  String? category;
 @override final  String? name;
 @override final  String? country;
@@ -239,16 +241,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text,logo,category,name,country,desc,isNative);
+int get hashCode => Object.hash(runtimeType,text,logo,icon,category,name,country,desc,isNative);
 
 @override
 String toString() {
-  return 'Brand(text: $text, logo: $logo, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
+  return 'Brand(text: $text, logo: $logo, icon: $icon, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
 }
 
 
@@ -259,7 +261,7 @@ abstract mixin class _$BrandCopyWith<$Res> implements $BrandCopyWith<$Res> {
   factory _$BrandCopyWith(_Brand value, $Res Function(_Brand) _then) = __$BrandCopyWithImpl;
 @override @useResult
 $Res call({
- String text, String? logo, String? category, String? name, String? country, String? desc, bool? isNative
+ String text, String? logo, String? icon, String? category, String? name, String? country, String? desc, bool? isNative
 });
 
 
@@ -276,10 +278,11 @@ class __$BrandCopyWithImpl<$Res>
 
 /// Create a copy of Brand
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? text = null,Object? logo = freezed,Object? category = freezed,Object? name = freezed,Object? country = freezed,Object? desc = freezed,Object? isNative = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? text = null,Object? logo = freezed,Object? icon = freezed,Object? category = freezed,Object? name = freezed,Object? country = freezed,Object? desc = freezed,Object? isNative = freezed,}) {
   return _then(_Brand(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,logo: freezed == logo ? _self.logo : logo // ignore: cast_nullable_to_non_nullable
+as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
 as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable

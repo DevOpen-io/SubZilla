@@ -9,6 +9,7 @@ part of 'brand.dart';
 _Brand _$BrandFromJson(Map<String, dynamic> json) => _Brand(
   text: json['text'] as String,
   logo: json['logo'] as String?,
+  icon: json['icon'] as String?,
   category: json['category'] as String?,
   name: json['name'] as String?,
   country: json['country'] as String?,
@@ -19,6 +20,7 @@ _Brand _$BrandFromJson(Map<String, dynamic> json) => _Brand(
 Map<String, dynamic> _$BrandToJson(_Brand instance) => <String, dynamic>{
   'text': instance.text,
   'logo': instance.logo,
+  'icon': instance.icon,
   'category': instance.category,
   'name': instance.name,
   'country': instance.country,

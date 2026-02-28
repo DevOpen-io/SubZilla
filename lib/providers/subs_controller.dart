@@ -40,7 +40,7 @@ class SubsController extends _$SubsController {
       ref.watch(subsStorageProvider.future),
       options: StorageOptions(
         cacheTime: StorageCacheTime.unsafe_forever,
-        destroyKey: "v1",
+        destroyKey: "v2",
       ),
     ).future;
     scheduleNotification();

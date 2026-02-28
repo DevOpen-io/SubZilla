@@ -6,6 +6,7 @@ import 'package:subs_tracker/models/brand.dart';
 import 'package:subs_tracker/models/sub_slice.dart';
 import 'package:subs_tracker/providers/subs_controller.dart';
 import 'package:subs_tracker/utils/color_utils.dart';
+import 'package:subs_tracker/widgets/brand_logo.dart';
 
 class SubsPie extends ConsumerStatefulWidget {
   const SubsPie({super.key});
@@ -100,13 +101,9 @@ class _Badge extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        child: brand?.logo != null ? Image.network(
-          brand!.logo!,
-          width: 40,
-          height: 20,
-          fit: BoxFit.contain,
-          errorBuilder: (_, _, _) =>
-              const Icon(Icons.business, size: 16),
+        child: brand != null ? BrandLogo(
+          brand: brand,
+          size: 28,
         ) :
                     Flexible(
         child: Text(

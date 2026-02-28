@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -9,6 +8,7 @@ import 'package:subs_tracker/models/sub_slice.dart';
 import 'package:subs_tracker/providers/brands_provider.dart';
 import 'package:subs_tracker/providers/subs_controller.dart';
 import 'package:subs_tracker/utils/color_palette.dart';
+import 'package:subs_tracker/widgets/brand_logo.dart';
 
 class EditSubsDialog extends HookConsumerWidget {
   const EditSubsDialog({
@@ -131,35 +131,9 @@ class EditSubsDialog extends HookConsumerWidget {
                               prefixIcon: draftSlice.value.brand != null
                                   ? Padding(
                                       padding: const EdgeInsets.all(8),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: SizedBox.square(
-                                          dimension: 32,
-                                          child:
-                                              draftSlice.value.brand!.logo !=
-                                                  null
-                                              ? CachedNetworkImage(
-                                                  imageUrl: draftSlice
-                                                      .value
-                                                      .brand!
-                                                      .logo!,
-                                                  fit: BoxFit.contain,
-                                                  placeholder: (_, _) =>
-                                                      const _LogoPlaceholder(),
-                                                  errorWidget: (_, _, _) =>
-                                                      const Icon(
-                                                        Icons.business,
-                                                      ),
-                                                )
-                                              : Container(
-                                                  color: Theme.of(context)
-                                                      .colorScheme
-                                                      .surfaceContainerHighest,
-                                                  child: const Icon(
-                                                    Icons.business,
-                                                  ),
-                                                ),
-                                        ),
+                                      child: BrandLogo(
+                                        brand: draftSlice.value.brand,
+                                        size: 32,
                                       ),
                                     )
                                   : const Icon(Icons.search),
@@ -210,27 +184,10 @@ class EditSubsDialog extends HookConsumerWidget {
                               itemBuilder: (context, index) {
                                 final Brand option = options.elementAt(index);
                                 return ListTile(
-                                  leading: option.logo != null
-                                      ? ClipRRect(
-                                          borderRadius: BorderRadius.circular(
-                                            8,
-                                          ),
-                                          child: CachedNetworkImage(
-                                            imageUrl: option.logo!,
-                                            width: 40,
-                                            height: 40,
-                                            fit: BoxFit.cover,
-                                            placeholder: (_, _) =>
-                                                const _LogoPlaceholder(),
-                                            errorWidget: (_, _, _) =>
-                                                const Icon(
-                                                  Icons.image_not_supported,
-                                                ),
-                                          ),
-                                        )
-                                      : const CircleAvatar(
-                                          child: Icon(Icons.business),
-                                        ),
+                                  leading: BrandLogo(
+                                    brand: option,
+                                    size: 40,
+                                  ),
                                   title: Text(option.text),
                                   subtitle:
                                       option.category != null ||
@@ -499,17 +456,4 @@ class EditSubsDialog extends HookConsumerWidget {
   }
 }
 
-class _LogoPlaceholder extends StatelessWidget {
-  const _LogoPlaceholder();
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: SizedBox(
-        width: 16,
-        height: 16,
-        child: CircularProgressIndicator(strokeWidth: 2),
-      ),
-    );
-  }
-}

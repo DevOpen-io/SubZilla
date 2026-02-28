@@ -75,7 +75,7 @@ final class BrandsProvider extends $AsyncNotifierProvider<Brands, List<Brand>> {
   Brands create() => Brands();
 }
 
-String _$brandsHash() => r'f605da45e18ac1b72d24644538cac182cbd9953c';
+String _$brandsHash() => r'97f03c4666ac0e5b65ce616e7e19160591ef1157';
 
 @JsonPersist()
 abstract class _$BrandsBase extends $AsyncNotifier<List<Brand>> {

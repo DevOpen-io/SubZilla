@@ -31,7 +31,7 @@ class Brands extends _$Brands {
       ref.watch(brandsStorageProvider.future),
       options: StorageOptions(
         cacheTime: StorageCacheTime.unsafe_forever,
-        destroyKey: "v1",
+        destroyKey: "v3",
       ),
     ).future;
     if (state.value != null) {
