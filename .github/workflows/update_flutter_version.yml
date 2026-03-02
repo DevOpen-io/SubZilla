@@ -1,0 +1,55 @@
+name: Update Flutter Version
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 09:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-flutter-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: 📥 Check out code
+        uses: actions/checkout@v4
+
+      - name: 🔍 Get latest stable Flutter version
+        id: latest
+        run: |
+          LATEST=$(curl -s https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json \
+            | jq -r '.releases[] | select(.channel=="stable") | .version' \
+            | head -n 1)
+          echo "version=$LATEST" >> $GITHUB_OUTPUT
+          echo "Latest stable Flutter: $LATEST"
+
+      - name: 📄 Read current .flutter-version
+        id: current
+        run: |
+          CURRENT=$(cat .flutter-version | tr -d '[:space:]')
+          echo "version=$CURRENT" >> $GITHUB_OUTPUT
+          echo "Current Flutter version: $CURRENT"
+
+      - name: 🔄 Update .flutter-version
+        if: steps.latest.outputs.version != steps.current.outputs.version
+        run: |
+          echo "${{ steps.latest.outputs.version }}" > .flutter-version
+          echo "Updated .flutter-version from ${{ steps.current.outputs.version }} to ${{ steps.latest.outputs.version }}"
+
+      - name: 📬 Create Pull Request
+        if: steps.latest.outputs.version != steps.current.outputs.version
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "⬆️ Update Flutter to ${{ steps.latest.outputs.version }}"
+          title: "⬆️ Update Flutter to ${{ steps.latest.outputs.version }}"
+          body: |
+            Auto-generated PR to update Flutter version.
+
+            - **From:** `${{ steps.current.outputs.version }}`
+            - **To:** `${{ steps.latest.outputs.version }}`
+
+            > This PR was created by the `update_flutter_version` workflow.
+          branch: chore/update-flutter-version
+          labels: dependencies

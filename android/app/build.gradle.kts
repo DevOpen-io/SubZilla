@@ -16,6 +16,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "io.devopen.subzilla"
+    kotlin { jvmToolchain(17) }
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
