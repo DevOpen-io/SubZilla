@@ -17,7 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
   package_info_plus: ^9.0.0
   flutter_launcher_icons: ^0.14.4
   fl_chart: ^1.1.1
