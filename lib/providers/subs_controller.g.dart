@@ -83,7 +83,7 @@ abstract class _$SubsControllerBase extends $AsyncNotifier<List<SubSlice>> {
   FutureOr<List<SubSlice>> build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<AsyncValue<List<SubSlice>>, List<SubSlice>>;
     final element =
         ref.element
@@ -93,7 +93,7 @@ abstract class _$SubsControllerBase extends $AsyncNotifier<List<SubSlice>> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_view_model.dart';
@@ -9,6 +9,7 @@ part of 'settings_view_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -28,16 +29,21 @@ $SettingsViewModelCopyWith<SettingsViewModel> get copyWith => _$SettingsViewMode
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SettingsViewModel&&(identical(other.theme, theme) || other.theme == theme)&&(identical(other.currency, currency) || other.currency == currency)&&const DeepCollectionEquality().equals(other.profilePicture, profilePicture)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.email, email) || other.email == email)&&(identical(other.isFirstTime, isFirstTime) || other.isFirstTime == isFirstTime)&&(identical(other.colorScheme, colorScheme) || other.colorScheme == colorScheme));
+  final _this = this as SettingsViewModel;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SettingsViewModel&&(identical(other.theme, _this.theme) || other.theme == _this.theme)&&(identical(other.currency, _this.currency) || other.currency == _this.currency)&&const DeepCollectionEquality().equals(other.profilePicture, _this.profilePicture)&&(identical(other.userName, _this.userName) || other.userName == _this.userName)&&(identical(other.email, _this.email) || other.email == _this.email)&&(identical(other.isFirstTime, _this.isFirstTime) || other.isFirstTime == _this.isFirstTime)&&(identical(other.colorScheme, _this.colorScheme) || other.colorScheme == _this.colorScheme));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,theme,currency,const DeepCollectionEquality().hash(profilePicture),userName,email,isFirstTime,colorScheme);
+int get hashCode {
+  final _this = this as SettingsViewModel;
+  return Object.hash(runtimeType,_this.theme,_this.currency,const DeepCollectionEquality().hash(_this.profilePicture),_this.userName,_this.email,_this.isFirstTime,_this.colorScheme);
+}
 
 @override
 String toString() {
-  return 'SettingsViewModel(theme: $theme, currency: $currency, profilePicture: $profilePicture, userName: $userName, email: $email, isFirstTime: $isFirstTime, colorScheme: $colorScheme)';
+  final _this = this as SettingsViewModel;
+  return 'SettingsViewModel(theme: ${_this.theme}, currency: ${_this.currency}, profilePicture: ${_this.profilePicture}, userName: ${_this.userName}, email: ${_this.email}, isFirstTime: ${_this.isFirstTime}, colorScheme: ${_this.colorScheme})';
 }
 
 
@@ -66,7 +72,7 @@ class _$SettingsViewModelCopyWithImpl<$Res>
 /// Create a copy of SettingsViewModel
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? theme = null,Object? currency = null,Object? profilePicture = freezed,Object? userName = freezed,Object? email = freezed,Object? isFirstTime = freezed,Object? colorScheme = null,}) {
-  return _then(_self.copyWith(
+  return _then(SettingsViewModel(
 theme: null == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
 as ThemeMode,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as Currency,profilePicture: freezed == profilePicture ? _self.profilePicture : profilePicture // ignore: cast_nullable_to_non_nullable
@@ -239,16 +245,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SettingsViewModel&&(identical(other.theme, theme) || other.theme == theme)&&(identical(other.currency, currency) || other.currency == currency)&&const DeepCollectionEquality().equals(other.profilePicture, profilePicture)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.email, email) || other.email == email)&&(identical(other.isFirstTime, isFirstTime) || other.isFirstTime == isFirstTime)&&(identical(other.colorScheme, colorScheme) || other.colorScheme == colorScheme));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SettingsViewModel&&(identical(other.theme, theme) || other.theme == theme)&&(identical(other.currency, currency) || other.currency == currency)&&const DeepCollectionEquality().equals(other.profilePicture, profilePicture)&&(identical(other.userName, userName) || other.userName == userName)&&(identical(other.email, email) || other.email == email)&&(identical(other.isFirstTime, isFirstTime) || other.isFirstTime == isFirstTime)&&(identical(other.colorScheme, colorScheme) || other.colorScheme == colorScheme));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,theme,currency,const DeepCollectionEquality().hash(profilePicture),userName,email,isFirstTime,colorScheme);
+int get hashCode {
+    return Object.hash(runtimeType,theme,currency,const DeepCollectionEquality().hash(profilePicture),userName,email,isFirstTime,colorScheme);
+}
 
 @override
 String toString() {
-  return 'SettingsViewModel(theme: $theme, currency: $currency, profilePicture: $profilePicture, userName: $userName, email: $email, isFirstTime: $isFirstTime, colorScheme: $colorScheme)';
+    return 'SettingsViewModel(theme: $theme, currency: $currency, profilePicture: $profilePicture, userName: $userName, email: $email, isFirstTime: $isFirstTime, colorScheme: $colorScheme)';
 }
 
 

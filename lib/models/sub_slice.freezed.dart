@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'sub_slice.dart';
@@ -9,6 +9,7 @@ part of 'sub_slice.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -28,16 +29,21 @@ $SubSliceCopyWith<SubSlice> get copyWith => _$SubSliceCopyWithImpl<SubSlice>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubSlice&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.name, name) || other.name == name)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.color, color) || other.color == color)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.category, category) || other.category == category)&&(identical(other.reminderMode, reminderMode) || other.reminderMode == reminderMode)&&(identical(other.cardLastFour, cardLastFour) || other.cardLastFour == cardLastFour)&&(identical(other.status, status) || other.status == status)&&(identical(other.note, note) || other.note == note)&&(identical(other.trialEndDate, trialEndDate) || other.trialEndDate == trialEndDate));
+  final _this = this as SubSlice;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubSlice&&(identical(other.brand, _this.brand) || other.brand == _this.brand)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.amount, _this.amount) || other.amount == _this.amount)&&(identical(other.color, _this.color) || other.color == _this.color)&&(identical(other.startDate, _this.startDate) || other.startDate == _this.startDate)&&(identical(other.frequency, _this.frequency) || other.frequency == _this.frequency)&&(identical(other.category, _this.category) || other.category == _this.category)&&(identical(other.reminderMode, _this.reminderMode) || other.reminderMode == _this.reminderMode)&&(identical(other.cardLastFour, _this.cardLastFour) || other.cardLastFour == _this.cardLastFour)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.note, _this.note) || other.note == _this.note)&&(identical(other.trialEndDate, _this.trialEndDate) || other.trialEndDate == _this.trialEndDate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,brand,name,amount,color,startDate,frequency,category,reminderMode,cardLastFour,status,note,trialEndDate);
+int get hashCode {
+  final _this = this as SubSlice;
+  return Object.hash(runtimeType,_this.brand,_this.name,_this.amount,_this.color,_this.startDate,_this.frequency,_this.category,_this.reminderMode,_this.cardLastFour,_this.status,_this.note,_this.trialEndDate);
+}
 
 @override
 String toString() {
-  return 'SubSlice(brand: $brand, name: $name, amount: $amount, color: $color, startDate: $startDate, frequency: $frequency, category: $category, reminderMode: $reminderMode, cardLastFour: $cardLastFour, status: $status, note: $note, trialEndDate: $trialEndDate)';
+  final _this = this as SubSlice;
+  return 'SubSlice(brand: ${_this.brand}, name: ${_this.name}, amount: ${_this.amount}, color: ${_this.color}, startDate: ${_this.startDate}, frequency: ${_this.frequency}, category: ${_this.category}, reminderMode: ${_this.reminderMode}, cardLastFour: ${_this.cardLastFour}, status: ${_this.status}, note: ${_this.note}, trialEndDate: ${_this.trialEndDate})';
 }
 
 
@@ -66,7 +72,7 @@ class _$SubSliceCopyWithImpl<$Res>
 /// Create a copy of SubSlice
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? brand = freezed,Object? name = null,Object? amount = null,Object? color = null,Object? startDate = null,Object? frequency = null,Object? category = freezed,Object? reminderMode = null,Object? cardLastFour = freezed,Object? status = null,Object? note = freezed,Object? trialEndDate = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(SubSlice(
 brand: freezed == brand ? _self.brand : brand // ignore: cast_nullable_to_non_nullable
 as Brand?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
@@ -261,16 +267,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubSlice&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.name, name) || other.name == name)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.color, color) || other.color == color)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.category, category) || other.category == category)&&(identical(other.reminderMode, reminderMode) || other.reminderMode == reminderMode)&&(identical(other.cardLastFour, cardLastFour) || other.cardLastFour == cardLastFour)&&(identical(other.status, status) || other.status == status)&&(identical(other.note, note) || other.note == note)&&(identical(other.trialEndDate, trialEndDate) || other.trialEndDate == trialEndDate));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubSlice&&(identical(other.brand, brand) || other.brand == brand)&&(identical(other.name, name) || other.name == name)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.color, color) || other.color == color)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.category, category) || other.category == category)&&(identical(other.reminderMode, reminderMode) || other.reminderMode == reminderMode)&&(identical(other.cardLastFour, cardLastFour) || other.cardLastFour == cardLastFour)&&(identical(other.status, status) || other.status == status)&&(identical(other.note, note) || other.note == note)&&(identical(other.trialEndDate, trialEndDate) || other.trialEndDate == trialEndDate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,brand,name,amount,color,startDate,frequency,category,reminderMode,cardLastFour,status,note,trialEndDate);
+int get hashCode {
+    return Object.hash(runtimeType,brand,name,amount,color,startDate,frequency,category,reminderMode,cardLastFour,status,note,trialEndDate);
+}
 
 @override
 String toString() {
-  return 'SubSlice(brand: $brand, name: $name, amount: $amount, color: $color, startDate: $startDate, frequency: $frequency, category: $category, reminderMode: $reminderMode, cardLastFour: $cardLastFour, status: $status, note: $note, trialEndDate: $trialEndDate)';
+    return 'SubSlice(brand: $brand, name: $name, amount: $amount, color: $color, startDate: $startDate, frequency: $frequency, category: $category, reminderMode: $reminderMode, cardLastFour: $cardLastFour, status: $status, note: $note, trialEndDate: $trialEndDate)';
 }
 
 

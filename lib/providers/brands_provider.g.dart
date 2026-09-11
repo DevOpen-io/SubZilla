@@ -82,7 +82,7 @@ abstract class _$BrandsBase extends $AsyncNotifier<List<Brand>> {
   FutureOr<List<Brand>> build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<AsyncValue<List<Brand>>, List<Brand>>;
     final element =
         ref.element
@@ -92,7 +92,7 @@ abstract class _$BrandsBase extends $AsyncNotifier<List<Brand>> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }
 

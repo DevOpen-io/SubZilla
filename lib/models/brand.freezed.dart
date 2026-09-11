@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'brand.dart';
@@ -9,6 +9,7 @@ part of 'brand.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -28,16 +29,21 @@ $BrandCopyWith<Brand> get copyWith => _$BrandCopyWithImpl<Brand>(this as Brand, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
+  final _this = this as Brand;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Brand&&(identical(other.text, _this.text) || other.text == _this.text)&&(identical(other.logo, _this.logo) || other.logo == _this.logo)&&(identical(other.icon, _this.icon) || other.icon == _this.icon)&&(identical(other.category, _this.category) || other.category == _this.category)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.country, _this.country) || other.country == _this.country)&&(identical(other.desc, _this.desc) || other.desc == _this.desc)&&(identical(other.isNative, _this.isNative) || other.isNative == _this.isNative));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text,logo,icon,category,name,country,desc,isNative);
+int get hashCode {
+  final _this = this as Brand;
+  return Object.hash(runtimeType,_this.text,_this.logo,_this.icon,_this.category,_this.name,_this.country,_this.desc,_this.isNative);
+}
 
 @override
 String toString() {
-  return 'Brand(text: $text, logo: $logo, icon: $icon, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
+  final _this = this as Brand;
+  return 'Brand(text: ${_this.text}, logo: ${_this.logo}, icon: ${_this.icon}, category: ${_this.category}, name: ${_this.name}, country: ${_this.country}, desc: ${_this.desc}, isNative: ${_this.isNative})';
 }
 
 
@@ -66,7 +72,7 @@ class _$BrandCopyWithImpl<$Res>
 /// Create a copy of Brand
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? logo = freezed,Object? icon = freezed,Object? category = freezed,Object? name = freezed,Object? country = freezed,Object? desc = freezed,Object? isNative = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(Brand(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,logo: freezed == logo ? _self.logo : logo // ignore: cast_nullable_to_non_nullable
 as String?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
@@ -241,16 +247,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Brand&&(identical(other.text, text) || other.text == text)&&(identical(other.logo, logo) || other.logo == logo)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.category, category) || other.category == category)&&(identical(other.name, name) || other.name == name)&&(identical(other.country, country) || other.country == country)&&(identical(other.desc, desc) || other.desc == desc)&&(identical(other.isNative, isNative) || other.isNative == isNative));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text,logo,icon,category,name,country,desc,isNative);
+int get hashCode {
+    return Object.hash(runtimeType,text,logo,icon,category,name,country,desc,isNative);
+}
 
 @override
 String toString() {
-  return 'Brand(text: $text, logo: $logo, icon: $icon, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
+    return 'Brand(text: $text, logo: $logo, icon: $icon, category: $category, name: $name, country: $country, desc: $desc, isNative: $isNative)';
 }
 
 
